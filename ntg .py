@@ -46,4 +46,27 @@
     </nav>
         {% endif %}
     </div>
+
+
+
+
+
+    #Backend code 
+    ==================
+    def ShowAllProducts(request):
+    products = Product.objects.all()
+
+    page_num = request.GET.get('page')  # Creating the total page
+    paginator = Paginator(products, 2)
+
+    try:
+        products = paginator.page(page_num)
+    except PageNotAnInteger:
+        products = paginator.page(1) # It need to redirect to 1 page
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    context ={
+        'products': products
+    }
  
