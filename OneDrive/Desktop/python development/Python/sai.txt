@@ -1,0 +1,71 @@
+sai ,harsh,ganga mohan
+
+
+
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import news
+from .forms import newsform
+
+# Displaying all the news reports on the homepage
+def news_report(request):
+    # Get all news articles from the database
+    new = news.objects.all()
+    # Return the rendered template with the news data passed as context
+    context = {
+        'new': new
+    }
+    return render(request, 'home.html', context)
+
+# Showing the details of a single news article
+def news_details(request, pk):
+    # Get the news article based on the primary key (pk)
+    eachnews = get_object_or_404(news, pk=pk)
+    # Return the rendered template with the news details passed as context
+    context = {
+        'eachnews': eachnews
+    }
+    return render(request, 'artical_details.html', context)
+
+# Adding a new news article
+def addnews(request):
+    if request.method == 'POST':
+        # If the form is submitted, process the form data
+        form = newsform(request.POST, request.FILES)
+        if form.is_valid():
+            # Save the new article to the database
+            form.save()
+            # Redirect to home after saving
+            return redirect('home')
+    else:
+        # Create an empty form instance if it's a GET request
+        form = newsform()
+
+    # Return the rendered template with the form passed as context
+    context = {
+        'form': form
+    }
+    return render(request, 'addnews.html', context)
+
+# Updating an existing news article
+def updatenews(request, pk):
+    # Get the news article based on the primary key (pk)
+    new = get_object_or_404(news, pk=pk)
+
+    if request.method == 'POST':
+        # If the form is submitted, process the form data
+        form = newsform(request.POST, request.FILES, instance=new)
+        if form.is_valid():
+            # Save the updated article to the database
+            form.save()
+            # Redirect to home after saving
+            return redirect('home')
+    else:
+        # Create the form pre-filled with the existing news article data
+        form = newsform(instance=new)
+
+    # Return the rendered template with the form and item passed as context
+    context = {
+        'form': form,
+        'item': new
+    }
+    return render(request, 'updatenews.html', context)

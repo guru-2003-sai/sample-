@@ -1,0 +1,348 @@
+# 1. Creating window
+from tkinter import *
+
+root = Tk()
+
+
+# 7. Creating functions
+def employee_Details():
+    e_name = name.get()
+    Name.set(e_name)
+    e_phn = phn_number.get()
+    Phn_number.set(e_phn)
+    e_dept = dept.get()
+    Dept.set(e_dept)
+    e_exp = exp.get()
+    Exp.set(e_exp)
+    e_id = id.get()
+    ID.set(e_id)
+    e_email = email.get()
+    Email.set(e_email)
+    e_address_ = address.get()
+    Address.set(e_address_)
+    e_education = education.get()
+    Education.set(e_education)
+    # total_yearly_amount=total_amount.get()
+    # Total_yearly_amount.set(total_yearly_amount)
+    # leaves=total_leaves.get()
+    # Total_leaves.set(leaves)
+    # paid=total_paid_salary.get()
+    # Total_paid_salary.set(paid)
+    # pt=total_pt_amount.get()
+    # Total_pt_amount.set(pt)
+
+    # Total yearly salary
+
+    jan_salary = float(jan_sal.get())
+    J_sal.set(jan_salary)
+    feb_salary = float(feb_sal.get())
+    F_sal.set(feb_salary)
+    mar_salary = float(mar_sal.get())
+    M_sal.set(mar_salary)
+    april_salary = float(april_sal.get())
+    A_sal.set(april_salary)
+    may_salary = float(may_sal.get())
+    Ma_sal.set(may_salary)
+    june_salary = float(june_sal.get())
+    June_sal.set(june_salary)
+    july_salary = float(july_sal.get())
+    Ju_sal.set(july_salary)
+    august_salary = float(august_sal.get())
+    aug_sal.set(august_salary)
+    sept_salary = float(september_sal.get())
+    S_sal.set(sept_salary)
+    oct_salary = float(october_sal.get())
+    O_sal.set(oct_salary)
+    nov_salary = float(november_sal.get())
+    N_sal.set(nov_salary)
+    december_salary = float(december_sal.get())
+    D_sal.set(december_sal)
+
+    sum_salary = float(jan_salary + feb_salary + mar_salary + april_salary + may_salary +
+                       june_salary + july_salary + august_salary + sept_salary + oct_salary + nov_salary + december_salary)
+
+    Total_yearly_amount.set(sum_salary)
+# leaves
+    leaves=[int(jan_leaves.get())+int(feb_leaves.get())+int(mar_leaves.get())+int(april_leaves.get())
+    +int(may_leaves.get())+int(june_leaves.get())+int(july_leaves.get())+int(august_leaves.get())
+    +int(september_leaves.get())+int(october_leaves.get())+int(november_leaves.get())+int(december_leaves.get())]
+
+    Total_leaves.set(leaves)
+# # #pt
+    pt=[float(jan_pt.get())+float(feb_pt.get())+float(mar_pt.get())+float(april_pt.get())+float(may_pt.get())
+    +float(june_pt.get())+float(july_pt.get())+float(august_pt.get())+float(september_pt.get())+float(october_pt.get())
+    +float(november_pt.get())+float(december_pt.get())]
+
+    Total_pt_amount.set(pt)
+
+# paid salary
+    ps=[float(jan_ps.get())+float(feb_ps.get())+float(mar_ps.get())+float(april_ps.get())+float(may_ps.get())+float(june_ps.get())+float(july_ps.get())
+    +float(august_ps.get())+float(september_ps.get())+float(october_ps.get())+float(november_ps.get())+float(december_ps.get())]
+
+    Total_paid_salary.set(ps)
+
+
+# 2. Creating window size and Tittle
+root.title("Employee Record Management")
+root.geometry("800x800")
+Name = StringVar()
+Phn_number = StringVar()
+Dept = StringVar()
+Exp = StringVar()
+ID = StringVar()
+Email = StringVar()
+Address = StringVar()
+Education = StringVar()
+# employee
+Total_yearly_amount = StringVar()
+Total_leaves = StringVar()
+Total_paid_salary = StringVar()
+Total_pt_amount = StringVar()
+
+J_sal = StringVar()
+F_sal = StringVar()
+M_sal = StringVar()
+A_sal = StringVar()
+Ma_sal = StringVar()
+June_sal = StringVar()
+Ju_sal = StringVar()
+aug_sal = StringVar()
+S_sal = StringVar()
+O_sal = StringVar()
+N_sal = StringVar()
+D_sal = StringVar()
+
+
+
+
+
+# 3. Creating Window Labels
+Label(root, text="Enter Your Employee  Full Name:").place(x=0, y=10)
+Label(root, text="Enter Your Employee Phone Number:").place(x=0, y=40)
+Label(root, text="Enter Your Employee Department:").place(x=0, y=70)
+Label(root, text="Enter Your Employee Experience:").place(x=0, y=100)
+
+Label(root, text="Enter Your Employee ID:").place(x=500, y=10)
+Label(root, text="Enter Your Employee Email:").place(x=500, y=40)
+Label(root, text="Enter Your Employee Adress:").place(x=500, y=70)
+Label(root, text="Enter Your Employee Education:").place(x=500, y=100)
+# Employee monthly salary
+Label(root, text="Enter Jan  Salary Amount:").place(x=0, y=150)
+Label(root, text="Enter Feb Salary Amount:").place(x=0, y=180)
+Label(root, text="Enter March Salary Amount:").place(x=0, y=210)
+Label(root, text="Enter April Salary Amount :").place(x=0, y=240)
+Label(root, text="Enter May Salary Amount:").place(x=0, y=270)
+Label(root, text="Enter June  Salary Amount:").place(x=0, y=300)
+Label(root, text="Enter July Salary Amount:").place(x=0, y=330)
+Label(root, text="Enter August Salary Amount:").place(x=0, y=360)
+Label(root, text="Enter September Salary Amount:").place(x=0, y=390)
+Label(root, text="Enter October Salary Amount:").place(x=0, y=420)
+Label(root, text="Enter November Salary Amount:").place(x=0, y=450)
+Label(root, text="Enter December Salary Amount:").place(x=0, y=480)
+# Employee leaves
+Label(root, text="Enter Jan leaves Amount :").place(x=350, y=150)
+Label(root, text="Enter Feb leaves Amount:").place(x=350, y=180)
+Label(root, text="Enter March leaves Amount:").place(x=350, y=210)
+Label(root, text="Enter April leaves  Amount :").place(x=350, y=240)
+Label(root, text="Enter May leaves Amount:").place(x=350, y=270)
+Label(root, text="Enter June leaves Amount:").place(x=350, y=300)
+Label(root, text="Enter July leaves Amount:").place(x=350, y=330)
+Label(root, text="Enter August leaves Amount:").place(x=350, y=360)
+Label(root, text="Enter September leaves Amount:").place(x=350, y=390)
+Label(root, text="Enter October leaves Amount:").place(x=350, y=420)
+Label(root, text="Enter November leaves Amount:").place(x=350, y=450)
+Label(root, text="Enter December leaves Amount:").place(x=350, y=480)
+# Employee PT amount
+Label(root, text="Enter Jan PT Amount :").place(x=710, y=150)
+Label(root, text="Enter Feb PT Amount:").place(x=710, y=180)
+Label(root, text="Enter March PT Amount:").place(x=710, y=210)
+Label(root, text="Enter April PT Amount :").place(x=710, y=240)
+Label(root, text="Enter May  PT Amount:").place(x=710, y=270)
+Label(root, text="Enter June PT Amount:").place(x=710, y=300)
+Label(root, text="Enter July PT Amount:").place(x=710, y=330)
+Label(root, text="Enter August PT Amount:").place(x=710, y=360)
+Label(root, text="Enter September PT Amount:").place(x=710, y=390)
+Label(root, text="Enter October PT Amount:").place(x=710, y=420)
+Label(root, text="Enter NovembeR  PT Amount:").place(x=710, y=450)
+Label(root, text="Enter December  PT Amount:").place(x=710, y=480)
+# paid salary
+Label(root, text="Paid Jan Salary:").place(x=1060, y=150)
+Label(root, text="Paid Feb Salary:").place(x=1060, y=180)
+Label(root, text="Paid Mar Salary:").place(x=1060, y=210)
+Label(root, text="Paid Apr Salary:").place(x=1060, y=240)
+Label(root, text="Paid May Salary:").place(x=1060, y=270)
+Label(root, text="Paid June Salary:").place(x=1060, y=300)
+Label(root, text="Paid July Salary:").place(x=1060, y=330)
+Label(root, text="Paid August Salary:").place(x=1060, y=360)
+Label(root, text="Paid September Salary:").place(x=1060, y=390)
+Label(root, text="Paid October Salary:").place(x=1060, y=420)
+Label(root, text="Paid November Salary:").place(x=1060, y=450)
+Label(root, text="Paid December Salary:").place(x=1060, y=480)
+
+# 4. Creating Text Boxes
+name = Entry(root)
+name.place(x=200, y=10)
+phn_number = Entry(root)
+phn_number.place(x=200, y=40)
+dept = Entry(root)
+dept.place(x=200, y=70)
+exp = Entry(root)
+exp.place(x=200, y=100)
+id = Entry(root)
+id.place(x=670, y=10)
+email = Entry(root)
+email.place(x=670, y=40)
+address = Entry(root)
+address.place(x=670, y=70)
+education = Entry(root)
+education.place(x=670, y=100)
+
+# Employee Salary Records
+jan_sal = Entry(root)
+jan_sal.place(x=180, y=150)
+feb_sal = Entry(root)
+feb_sal.place(x=180, y=180)
+mar_sal = Entry(root)
+mar_sal.place(x=180, y=210)
+april_sal = Entry(root)
+april_sal.place(x=180, y=240)
+may_sal = Entry(root)
+may_sal.place(x=180, y=270)
+june_sal = Entry(root)
+june_sal.place(x=180, y=300)
+july_sal = Entry(root)
+july_sal.place(x=180, y=330)
+august_sal = Entry(root)
+august_sal.place(x=180, y=360)
+september_sal = Entry(root)
+september_sal.place(x=180, y=390)
+october_sal = Entry(root)
+october_sal.place(x=180, y=420)
+november_sal = Entry(root)
+november_sal.place(x=180, y=450)
+december_sal = Entry(root)
+december_sal.place(x=180, y=480)
+# Monthly leaves
+jan_leaves = Entry(root)
+jan_leaves.place(x=530, y=150)
+feb_leaves = Entry(root)
+feb_leaves.place(x=530, y=180)
+mar_leaves = Entry(root)
+mar_leaves.place(x=530, y=210)
+april_leaves = Entry(root)
+april_leaves.place(x=530, y=240)
+may_leaves = Entry(root)
+may_leaves.place(x=530, y=270)
+june_leaves = Entry(root)
+june_leaves.place(x=530, y=300)
+july_leaves = Entry(root)
+july_leaves.place(x=530, y=330)
+august_leaves = Entry(root)
+august_leaves.place(x=530, y=360)
+september_leaves = Entry(root)
+september_leaves.place(x=530, y=390)
+october_leaves = Entry(root)
+october_leaves.place(x=530, y=420)
+november_leaves = Entry(root)
+november_leaves.place(x=530, y=450)
+december_leaves = Entry(root)
+december_leaves.place(x=530, y=480)
+# monthly PT Amount
+jan_pt = Entry(root)
+jan_pt.place(x=880, y=150)
+feb_pt = Entry(root)
+feb_pt.place(x=880, y=180)
+mar_pt = Entry(root)
+mar_pt.place(x=880, y=210)
+april_pt = Entry(root)
+april_pt.place(x=880, y=240)
+may_pt = Entry(root)
+may_pt.place(x=880, y=270)
+june_pt = Entry(root)
+june_pt.place(x=880, y=300)
+july_pt = Entry(root)
+july_pt.place(x=880, y=330)
+august_pt = Entry(root)
+august_pt.place(x=880, y=360)
+september_pt = Entry(root)
+september_pt.place(x=880, y=390)
+october_pt = Entry(root)
+october_pt.place(x=880, y=420)
+november_pt = Entry(root)
+november_pt.place(x=880, y=450)
+december_pt = Entry(root)
+december_pt.place(x=880, y=480)
+
+
+# paid salary 
+
+jan_ps = Entry(root)
+jan_ps.place(x=1190, y=150)
+feb_ps = Entry(root)
+feb_ps.place(x=1190, y=180)
+mar_ps = Entry(root)
+mar_ps.place(x=1190, y=210)
+april_ps = Entry(root)
+april_ps.place(x=1190, y=240)
+may_ps = Entry(root)
+may_ps.place(x=1190, y=270)
+june_ps = Entry(root)
+june_ps.place(x=1190, y=300)
+july_ps = Entry(root)
+july_ps.place(x=1190, y=330)
+august_ps = Entry(root)
+august_ps.place(x=1190, y=360)
+september_ps = Entry(root)
+september_ps.place(x=1190, y=390)
+october_ps = Entry(root)
+october_ps.place(x=1190, y=420)
+november_ps = Entry(root)
+november_ps.place(x=1190, y=450)
+december_ps = Entry(root)
+december_ps.place(x=1190, y=480)
+
+
+# 5. Creating a Button for submitting
+Button(root, text="Submit", command=employee_Details).place(x=1000, y=60)
+
+# 6. Result
+Label(root, text="--------------Employee Health Record Management----------- :").place(x=10, y=510)
+Label(root, text="Employee Full Name :").place(x=10, y=540)
+Label(root, text="", textvariable=Name).place(x=170, y=540)
+
+Label(root, text="Employee ID:").place(x=350, y=540)
+Label(root, text="", textvariable=ID).place(x=535, y=540)
+
+Label(root, text="Employee Phone Number:").place(x=710, y=540)
+Label(root, text="", textvariable=Phn_number).place(x=880, y=540)
+
+Label(root, text="Employee Email:").place(x=1060, y=540)
+Label(root, text="", textvariable=Email).place(x=1160, y=540)
+
+Label(root, text="Employee Department:").place(x=10, y=570)
+Label(root, text="", textvariable=Dept).place(x=170, y=570)
+
+Label(root, text="Employee Experience:").place(x=350, y=570)
+Label(root, text="", textvariable=Exp).place(x=535, y=570)
+
+Label(root, text="Employee Education:").place(x=710, y=570)
+Label(root, text="", textvariable=Education).place(x=880, y=570)
+
+Label(root, text="Employee Address:").place(x=1060, y=570)
+Label(root, text="", textvariable=Address).place(x=1160, y=570)
+
+Label(root, text="Total Financial year Amount:").place(x=10, y=600)
+Label(root, text="", textvariable=Total_yearly_amount).place(x=200, y=600)
+
+Label(root, text="Total Number of Leaves:").place(x=350, y=600)
+Label(root, text="", textvariable=Total_leaves).place(x=535, y=600)
+
+Label(root, text="Total Amount Debited:").place(x=710, y=600)
+Label(root, text="", textvariable=Total_pt_amount).place(x=880, y=600)
+
+
+Label(root, text="Total Paid Salary:").place(x=1060, y=600)
+Label(root, text="", textvariable=Total_paid_salary).place(x=1160, y=600)
+
+
+mainloop()
